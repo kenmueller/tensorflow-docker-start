@@ -1,5 +1,6 @@
 FROM python
 WORKDIR /app
-COPY . /app
-RUN pip install --trusted-host pypi.python.org -r requirements.txt
+ADD ./requirements.txt /app/requirements.txt
+RUN pip install -r requirements.txt
+ADD . /app
 CMD ["python", "app.py"]
